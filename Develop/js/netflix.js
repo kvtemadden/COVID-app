@@ -3,18 +3,6 @@ $(document).ready(function () {
     var userGenre = [];
 
     $("input[type=checkbox]").prop("checked", false); //forces checkboxes unchecked on page load
-    
-    //api info
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://netflix-unofficial.p.rapidapi.com/api/search?genre=" + userGenre,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "65462b90a2msha45c78653a0b714p1594f9jsnb99b8a6c5fd2",
-            "x-rapidapi-host": "netflix-unofficial.p.rapidapi.com"
-        }
-    };
 
     $("input[type=checkbox]").on("click", function () { //if checkbox is checked...
         var clickedGenre = $(this).attr("id");
@@ -38,12 +26,32 @@ $(document).ready(function () {
     });
 
     $("#movie-search").on("click", function (event) {
+
         event.preventDefault(); //prevents default button event
 
-        //Calling api
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
+        for (var j = 0; j < userGenre.length; j++) {
+            var currentFilm = userGenre[j];
+            debugger;
+            //api info
+            var apiURL = "https://netflix-unofficial.p.rapidapi.com/api/search?genre=" + currentFilm;
+            const settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": apiURL,
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "65462b90a2msha45c78653a0b714p1594f9jsnb99b8a6c5fd2",
+                    "x-rapidapi-host": "netflix-unofficial.p.rapidapi.com"
+                }
+            };
+
+
+            //Calling api
+            $.ajax(settings).done(function (response) {
+                 console.log(response);
+            });
+        }
     });
+
 
 });
