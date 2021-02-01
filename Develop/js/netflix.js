@@ -29,38 +29,54 @@ $(document).ready(function () {
     });
 
     $("#movie-search").on("click", function (event) {
+        debugger;
+        event.preventDefault(); //prevents default button event      
 
-        event.preventDefault(); //prevents default button event
-        if ($("#move-search").text("Search")) {
-        $("h5").text("Here's our recommendations...");
-        $("#movie-search").text("Select Other Genres");
-        for (var j = 0; j < userGenre.length; j++) {
-            var currentFilm = userGenre[j];
-            //api info
-            var apiURL = "https://netflix-unofficial.p.rapidapi.com/api/search?genre=" + currentFilm;
-            const settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": apiURL,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-key": "65462b90a2msha45c78653a0b714p1594f9jsnb99b8a6c5fd2",
-                    "x-rapidapi-host": "netflix-unofficial.p.rapidapi.com"
-                }
-            };
-
-
-            //Calling api
-            $.ajax(settings).done(function (response) {
-                 console.log(response);
-            });
+        if ($(this).hasClass("return") == true) { // returns to search view
+            $(this).removeClass("return");
+            $(this).text("Search");
+            $("#search-desc").text("Search by Genre");
+            $("#page-title").show();
+            $("#page-desc").show();
         }
-    }
-    else if ($("#movie-search").text("Select Other Genres")) {
-        $("#movie-search").text("Search");
-        $("h5").text("Use our generator to find movies or shows to watch!");
-    }
+
+        else {
+            $(this).addClass("return");
+            $(this).text("Return to Search");
+            $("#page-title").hide();
+            $("#page-desc").hide();
+            $("#content").hide();
+
+            $("#search-desc").text("Here's our recommendations...");
+            for (var j = 0; j < userGenre.length; j++) {
+                var currentFilm = userGenre[j];
+                //api info
+                var apiURL = "https://netflix-unofficial.p.rapidapi.com/api/search?genre=" + currentFilm;
+                const settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": apiURL,
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-key": "65462b90a2msha45c78653a0b714p1594f9jsnb99b8a6c5fd2",
+                        "x-rapidapi-host": "netflix-unofficial.p.rapidapi.com"
+                    }
+                };
+
+
+                //Calling api
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                });
+            }
+        }
     });
+
+    // $(".return").on("click", function (event) {
+    //     event.preventDefault(); //prevents default button event      
+    //     $(this).attr("id", "movie-search");
+    //     $(this).text("Search");
+    // });
 
     function preventFive() { //stops users being able to select more than 5 genres at a time
         if (userGenre.length == 5) {
@@ -69,7 +85,7 @@ $(document).ready(function () {
                 uncheckedBox.prop("disabled", true);
             }
         }
-        else { 
+        else {
             $("input:checkbox").prop("disabled", false);
         }
     }
