@@ -31,7 +31,9 @@ $(document).ready(function () {
     $("#movie-search").on("click", function (event) {
 
         event.preventDefault(); //prevents default button event
-
+        if ($("#move-search").text("Search")) {
+        $("h5").text("Here's our recommendations...");
+        $("#movie-search").text("Select Other Genres");
         for (var j = 0; j < userGenre.length; j++) {
             var currentFilm = userGenre[j];
             //api info
@@ -53,6 +55,11 @@ $(document).ready(function () {
                  console.log(response);
             });
         }
+    }
+    else if ($("#movie-search").text("Select Other Genres")) {
+        $("#movie-search").text("Search");
+        $("h5").text("Use our generator to find movies or shows to watch!");
+    }
     });
 
     function preventFive() { //stops users being able to select more than 5 genres at a time
