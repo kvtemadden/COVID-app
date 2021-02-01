@@ -17,7 +17,6 @@ $(document).ready(function () {
         }
         searchHistory.unshift(searchItem);
         covidLocal();
-        covidNational();
         $("#enter-city").val("");
       }
       else if ($("input").val() === "") {
@@ -32,8 +31,7 @@ $(document).ready(function () {
   // Function to create url
   function urlBuild() {
     let city = searchHistory[0];
-    let url = 'https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=utla;areaName=' + city +
-    '&structure={"date":"date","areaName":"areaName","newCasesBySpecimenDate":"newCasesBySpecimenDate","newDeaths28DaysByPublishDate":"newDeaths28DaysByPublishDate","cumCasesBySpecimenDate":"cumCasesBySpecimenDate"}'
+    let url = 'https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=utla;areaName=' + city + '&structure={"date":"date","areaName":"areaName","newCasesBySpecimenDate":"newCasesBySpecimenDate","newDeaths28DaysByPublishDate":"newDeaths28DaysByPublishDate","cumCasesBySpecimenDate":"cumCasesBySpecimenDate"}'
     return url;
   }
   
@@ -52,41 +50,54 @@ $(document).ready(function () {
         let deaths = response.data[2].newDeaths28DaysByPublishDate;
 
         $(".results").html("");
-        $(".results").css({"border":"2px solid red", "margin-bottom":"30px"})
+
         $(".results").append("<div class='row' style='padding-bottom:15px; text-align:center'><h4>Displaying Figures for: " + area + "</h4><h5>Data last updated 48hrs ago</h5></div>");
-        $(".results").append("<h5 id='cases' class='col s3 cases green darken-1 white-text z-depth-2 center-align'>New cases: </h5>");
+
+        $(".results").append("<div class='col s3 cases green darken-1 white-text z-depth-2' id='cases'>Cases: </div>");
         $("#cases").append(newCases);
-        $(".results").append("<h5 id='deaths' class='col s3 deaths green darken-1 white-text offset-s1 z-depth-2 center-align'>Deaths: </h5>");
-        $(".deaths").append(deaths);
-        $(".results").append("<h5 id='total' class='col s3 deaths green darken-1 white-text offset-s1 z-depth-2 center-align'>Total cases to date: </h5>");
+
+        $(".results").append("<div class='col s3 deaths green darken-1 white-text offset-s1 z-depth-2' id='deaths'>Deaths: </div>");
+        $("#deaths").append(deaths);
+
+        $(".results").append("<div class='col s3 hospital green darken-1 white-text offset-s1 z-depth-2' id='total'>Total cases to date: </div>");
         $("#total").append(totalCases); 
+
+        covidNational();
       }
     })
   }
 
   function covidNational() {
     $.ajax({
-      url: 'https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","hospitalCases":"hospitalCases","newAdmissions":"newAdmissions","newCasesByPublishDate":"newCasesByPublishDate","cumCasesByPublishDate":"cumCasesByPublishDate","cumDeaths28DaysByPublishDate":"cumDeaths28DaysByPublishDate"}',
+      url: 'https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","hospitalCases":"hospitalCases","newAdmissions":"newAdmissions","covidOccupiedMVBeds":"covidOccupiedMVBeds","newCasesByPublishDate":"newCasesByPublishDate","cumCasesByPublishDate":"cumCasesByPublishDate","cumDeaths28DaysByPublishDate":"cumDeaths28DaysByPublishDate"}',
       type: "GET",      
-      success: function (response) {
-        console.log(response);
-        let newCasesNational = response.data[3].newCasesByPublishDate;
-        let totalCasesNational = response.data[3].cumCasesByPublishDate;
-        let deathsNational = response.data[3].cumDeaths28DaysByPublishDate;
-        let hospitalNational = response.data[3].hospitalCases;
-        let admissionsNational  = response.data[3].newAdmissions;
+      success: function (resp) {
+        console.log(resp);
+        let casesNat = resp.data[3].newCasesByPublishDate;
+        let hospital = resp.data[3].hospitalCases;
+        let admissions = resp.data[3].newAdmissions;
 
-        $(".national").css({"border":"2px solid red", "margin-bottom":"30px"})
-        $(".national").append("<div class='row' style='padding-bottom:15px; text-align:center'><h4>National Figures: </h4><h5>Data last updated 48hrs ago</h5></div>");
-        $(".national").append("<h5 id='casesNat' class='col s3 cases green darken-1 white-text z-depth-2 center-align'>New cases: </h5>");
-        $("#casesNat").append(newCasesNational);
-        $(".national").append("<h5 id='deathsNat' class='col s3 deaths green darken-1 white-text offset-s1 z-depth-2 center-align'>Deaths: </h5>");
-        $("#deathsNat").append(deathsNational);
-        $(".national").append("<h5 id='totalNat' class='col s3 deaths green darken-1 white-text offset-s1 z-depth-2 center-align'>Total cases to date: </h5>");
-        $("#totalNat").append(totalCasesNational);
+        $(".results").append("<div class='col s3 hospital green darken-1 white-text offset-s1 z-depth-2' id='cases-national'>New cases national: </div>");
+        $("#cases-national").append(casesNat); 
+        $(".results").append("<div class='col s3 hospital green darken-1 white-text offset-s1 z-depth-2' id='hospital'>New hospital cases: </div>");
+        $("#hospital").append(hospital); 
+        $(".results").append("<div class='col s3 hospital green darken-1 white-text offset-s1 z-depth-2' id='admissions'>New hospital admissions: </div>");
+        $("#admissions").append(admissions);
       }
     })
   }
+
+
+
+
+
+
+
 })
+
+
+
+
+
 
 
