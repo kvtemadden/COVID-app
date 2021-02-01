@@ -1,10 +1,12 @@
 $(document).ready(function () {
 
     var userGenre = [];
+    var length = userGenre.length + 1;
 
     $("input[type=checkbox]").prop("checked", false); //forces checkboxes unchecked on page load
 
     $("input[type=checkbox]").on("click", function () { //if checkbox is checked...
+        preventFive();
         var clickedGenre = $(this).attr("id");
         var i = 0;
 
@@ -23,6 +25,7 @@ $(document).ready(function () {
             }
         }
         console.log(userGenre); // testing purposes, log what's currently in user genre selection
+        preventFive(); // repeated in order to update after the userGenre array has updated
     });
 
     $("#movie-search").on("click", function (event) {
@@ -31,7 +34,6 @@ $(document).ready(function () {
 
         for (var j = 0; j < userGenre.length; j++) {
             var currentFilm = userGenre[j];
-            debugger;
             //api info
             var apiURL = "https://netflix-unofficial.p.rapidapi.com/api/search?genre=" + currentFilm;
             const settings = {
@@ -52,6 +54,18 @@ $(document).ready(function () {
             });
         }
     });
+
+    function preventFive() { //stops users being able to select more than 5 genres at a time
+        if (userGenre.length == 5) {
+            if ($("input:checkbox:not(:checked)")) {
+                var uncheckedBox = $("input:checkbox:not(:checked)");
+                uncheckedBox.prop("disabled", true);
+            }
+        }
+        else { 
+            $("input:checkbox").prop("disabled", false);
+        }
+    }
 
 
 });
