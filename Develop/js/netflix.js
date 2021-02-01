@@ -2,17 +2,19 @@ $(document).ready(function () {
 
     var userGenre = [];
     var movies = {
-        "Action": ["Black Panther", "Mission: Impossible - Fallout", "Mad Max: Fury Road", "Spider-Man: Into the Spider-Verse", "Wonder Woman", "Dunkirk", "Baby Driver", "Thor: Ragnarok", "Star Wars: The Last Jedi", "Incredibles 2"],
+        "Action": ["Black Panther", "Mission: Impossible - Fallout", "Mad Max: Fury Road", "Spider-Man: Into the Spider-Verse", "Wonder Woman", "Dunkirk", "Baby Driver", "Thor: Ragnarok", "The Bourne Identity", "Incredibles 2"],
         "Classics": ["Stand By Me", "The Breakfast Club", "Shawshank Redemption", "Rebel Without a Cause", "Gone With the Wind", "The Wizard of Oz", "Psycho", "Grease", "Dirty Dancing", "Footloose"],
         "Comedies": ["Superbad", " Can't Hardly Wait", "Cloudy with a Chance of Meatballs", "50 First Dates", "Easy A", "Hail Caesar", "The Other Guys", "Scott Pilgrim vs. the World", "Wine Country", "Get Him to the Greek"],
         "Documentaries": ["Blue Planet", "The Last Dance", "My Octopus Teacher", "American Murder: The Family Next Door", "Tiger King", "Louis Theroux: Savile", "Unsolved Mysteries", "The Disappearance of Madeleine McCann", "The Confession Killer", "Jeffrey Epstein: Filthy Rich"],
         "Dramas": ["The Dig", "365 Days", "Rebecca", "The Green Mile", "Warrior", "Ava", "Bird Box", "Falling Down", "Twilight", "The Hunger Games"],
-        "Horrors": ["Sinister", "Annabelle", "Insideous", "The Exorcist", "The Ring", "Silence of The Lambs", "Thirteen", "The Babadook", "Eden Lake", "Final Destination"],
+        "Horror": ["Sinister", "Annabelle", "Insideous", "The Exorcist", "The Ring", "The Grudge", "Thirteen", "The Babadook", "Eden Lake", "Final Destination"],
         "International": ["Parasite", "The Wailing", "Death Note", "Bleach", "Train to Busan", "Monsoon Wedding", "Woman at War", "The Salesman", "Ida", "Roma"],
         "Musicals": ["Mamma Mia", "Les Miserablés", "Hairspray", "Hamilton", "Little Shop of Horrors", "The Sound of Music", "The Rocky Horror Picture Show", "Willy Wonka & the Chocolate Factor", "Cats", "Bohemian Rhapsody"],
         "Romance": ["Blended", "Bridget Jones's Diary", "The Notebook", "Fifty Shades of Grey", "Five Feet Apart", "The Proposal", "Her", "Titanic", "Romeo and Juliet", "Crazy Rich Asians"]
     };
-    var randomNum = Math.floor(Math.random() * 11);
+    var randomNum = Math.floor(Math.random() * 10);
+    var movieContent = $("<div class='row center'></div>");
+
 
     $("input[type=checkbox]").prop("checked", false); //forces checkboxes unchecked on page load
 
@@ -40,7 +42,6 @@ $(document).ready(function () {
     });
 
     $("#movie-search").on("click", function (event) {
-        // debugger;
         event.preventDefault(); //prevents default button event      
 
         if ($(this).hasClass("return") == true) { // returns to search view
@@ -50,6 +51,10 @@ $(document).ready(function () {
             $("#page-title").show();
             $("#page-desc").show();
             $(".show").show();
+            $(".r").remove();
+            $("input[type=checkbox]").prop("checked", false);
+            $("input:checkbox").prop("disabled", false);
+            userGenre = [];
         }
 
         else {
@@ -58,6 +63,7 @@ $(document).ready(function () {
             $("#page-title").hide();
             $("#page-desc").hide();
             $(".show").hide();
+            $("#content").append(movieContent);
 
             $("#search-desc").text("Here's our recommendations...");
 
@@ -80,29 +86,30 @@ $(document).ready(function () {
             x = 0;
         }
     });
-    var j;
+    var j = 0;
     var x = 1;
 
     function saveMovInfo(response) {
         if (userGenre.length == 5) {
             if (x <= 2) {
-            var colEl = $("<div class='col s12 m4' id='mov-" + x + "'></div>");
-            var imgEl = $("<img src='" + response.Poster + "'/>");
-            var movHEl = $("<p class='mov-header'>" + response.Title + "</p>");
-            var movDescEl = $("<p class='mov-desc'>" + response.Plot + "</p>");
+            var colEl = $("<div class='col s12 m4 r' id='mov-" + x + "'></div>");
+            var imgEl = $("<img class='mov-poster r' src='" + response.Poster + "'/>");
+            var movHEl = $("<p class='mov-header r'>" + response.Title + "</p>");
+            var movDescEl = $("<p class='mov-desc r'>" + response.Plot + "</p>");
 
-            $("#content").append(colEl);
+
+            $(movieContent).append(colEl);
             $(colEl).append(imgEl);
             $(colEl).append(movHEl);
             $(colEl).append(movDescEl);
             }
             else if (x > 2) {
-                var colEl = $("<div class='col s12 m4' id='mov-" + x + "'></div>");
-                var imgEl = $("<img src='" + response.Poster + "'/>");
-                var movHEl = $("<p class='mov-header'>" + response.Title + "</p>");
-                var movDescEl = $("<p class='mov-desc'>" + response.Plot + "</p>");
+                var colEl = $("<div class='col s12 m6 r' id='mov-" + x + "'></div>");
+                var imgEl = $("<img class='mov-poster r' src='" + response.Poster + "'/>");
+                var movHEl = $("<p class='mov-header r'>" + response.Title + "</p>");
+                var movDescEl = $("<p class='mov-desc r'>" + response.Plot + "</p>");
     
-                $("#content").append(colEl);
+                $(movieContent).append(colEl);
                 $(colEl).append(imgEl);
                 $(colEl).append(movHEl);
                 $(colEl).append(movDescEl);
