@@ -1,16 +1,36 @@
+body{
+
+    background-image: url('https://drive.google.com/thumbnail?id=19eHSR9C-SloyfPSzYDVe-po3j-iwJtBw');
+    background-repeat: repeat;
+}
+
+
+
+
 #movie-search{
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
-/* .flexbox {
+.flexbox {
     margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-  } */
+  }
 
 label{  
     left: 50%;
   } 
+
+#logo-netflix{
+    display: flex;
+    margin-top: 4rem;
+}
+
+
+
+#page-title{
+    margin-top: 0rem;
+}
