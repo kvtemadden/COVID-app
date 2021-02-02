@@ -1,10 +1,41 @@
 body {
+    background-image: url('https://drive.google.com/thumbnail?id=19eHSR9C-SloyfPSzYDVe-po3j-iwJtBw');
+    background-repeat: repeat;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
+  /* background image not working might just take it out looks fine without it */
 
-  main {
+  /* main {
     flex: 1 0 auto;
+  } */
+
+ #main{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 50px;
+    border-radius: 20px;
   }
-  
+
+  label[for=city]{
+    color: black;
+  }
+
+  ::placeholder{
+    color: darkgrey;
+  }
+
+  #cases{
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  #deaths{  
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  #hospital{
+    border-radius: 20px;
+    padding: 20px;
+  }

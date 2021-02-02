@@ -6,6 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
   <title>Bored During Lockdown?</title>
 
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="../Develop/css/bored.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="green lighten-3" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Covid site</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="symptom-tracker.html">Symptom Tracker</a></li>
+                <li><a href="bored.html">Bored during lockdown?</a></li>
+            </ul>
+            <!-- MOBILE NAV -->
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="symptom-tracker.html">Symptom Tracker</a></li>
+                <li><a href="bored.html">Bored during lockdown?</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+=======
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -31,9 +59,96 @@
     </div>
   </nav>
 
+
   <!-- MAIN HEADER  -->
   <div class="container green lighten-5" id="main">
     <div class="section no-pad-bot" id="index-banner">
+
+        <div class="container green lighten-5" id="main">
+            <br><br>
+            <h1 class="header center green-text">Bored during lockdown?</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">Use our generator to find movies or shows to watch!</h5>
+                <div class="row">
+                    <div class="container">
+                        <div class="row center">
+                            <div class="col s12">
+                              <div class="card green lighten-4">
+                                <div class="card-content black-text">
+                                  <span class="card-title" id="search-desc">Search by Genre</span>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                    
+                    <div class="row" id="content">
+                      <div class="col s4">
+                        <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Action" />
+                              <span>Action</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Classics" />
+                              <span>Classics</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Comedies" />
+                              <span>Comedies</span>
+                            </label>
+                          </p>
+                      </div>
+                    
+                    <div class="col s4">
+                        <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Documentaries" />
+                              <span>Documentary</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Dramas" />
+                              <span>Dramas</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Horror" />
+                              <span>Horror</span>
+                            </label>
+                          </p>
+                    </div>
+                    <div class="col s4">
+                        <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="International" />
+                              <span>International</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Musicals" />
+                              <span>Musicals</span>
+                            </label>
+                          </p>
+                          <p>
+                            <label>
+                              <input type="checkbox" class="filled-in" checked="checked" id="Romance" />
+                              <span>Romance</span>
+                            </label>
+                          </p>
+                    </div>
+                    <div class="row center">
+                    <a class="waves-effect waves-light btn " id="movie-search">Search</a>
+                    </div>
+                </div>
+                
+
       <div class="row center">
         <img class="responsive-img" width="300" alt="Netflix logo"
           src="https://drive.google.com/thumbnail?id=1AK5CyCz0OqJyfUSLx2oHnM3qxHNViX3W" id="logo-netflix">
@@ -49,6 +164,7 @@
               <div class="card green lighten-4">
                 <div class="card-content black-text">
                   <span class="card-title" id="search-desc">Search by Genre</span>
+
                 </div>
               </div>
             </div>
@@ -120,13 +236,6 @@
           <div class="row center">
             <a class="waves-effect waves-light btn" id="movie-search">Search</a>
         </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
 
   <!-- FOOTER -->
   <footer class="page-footer green lighten-3">
