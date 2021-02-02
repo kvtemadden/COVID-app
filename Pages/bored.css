@@ -72,6 +72,14 @@ body{
 }
 }
 
-.mov-desc {
+@media (max-width: 601px) {
+.mov-desc, .mov-desc-t {
+    height: 100px;
+}
+}
+
+@media (min-width: 602px) {
+.mov-desc-t {
     height: 200px;
+}
 }
