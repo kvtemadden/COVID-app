@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     var userGenre = [];
+    var movieCollections = [];
     var movies = {
         "Action": ["Black Panther", "Mission: Impossible - Fallout", "Mad Max: Fury Road", "Spider-Man: Into the Spider-Verse", "Wonder Woman", "Dunkirk", "Baby Driver", "Thor: Ragnarok", "The Bourne Identity", "Incredibles 2"],
         "Classics": ["Stand By Me", "The Breakfast Club", "Shawshank Redemption", "Rebel Without a Cause", "Gone With the Wind", "The Wizard of Oz", "Psycho", "Grease", "Dirty Dancing", "Footloose"],
@@ -44,6 +45,15 @@ $(document).ready(function () {
     $("#movie-search").on("click", function (event) {
         event.preventDefault(); //prevents default button event      
 
+        var l = 0;
+        var fillArray = 5 - userGenre.length;
+        if (userGenre.length < 5) {
+            while (l < fillArray) {
+                userGenre.push(userGenre[l]);
+                l++;
+            }
+        }
+
         if ($(this).hasClass("return") == true) { // returns to search view
             $(this).removeClass("return");
             $(this).text("Search");
@@ -68,12 +78,15 @@ $(document).ready(function () {
             $("#search-desc").text("Here's our recommendations...");
 
             for (j = 0; j < userGenre.length; j++) {
-                var currentFilm = userGenre[j];
-                var selectFilm = movies[currentFilm][randomNum];
+                debugger;
+                // var currentFilm = userGenre[j];
+                // selectFilm = movies[currentFilm][randomNum];
+                genMovie(j);
                 console.log(selectFilm);
 
                 //api info
                 var queryURL = "https://www.omdbapi.com/?t=" + selectFilm + "&apikey=trilogy";
+                selectFilm = "";
                 //Calling api
                 $.ajax({
                     url: queryURL,
@@ -83,11 +96,19 @@ $(document).ready(function () {
                     saveMovInfo(response);
                 });
             };
+            
             x = 0;
         }
     });
     var j = 0;
     var x = 1;
+    var currentFilm;
+    var selectFilm;
+
+    function genMovie() {
+        currentFilm = userGenre[j];
+        selectFilm = movies[currentFilm][Math.floor(Math.random() * 10)];
+    }
 
     function saveMovInfo(response) {
         if (userGenre.length == 5) {
@@ -95,7 +116,7 @@ $(document).ready(function () {
             var colEl = $("<div class='col s12 m4 r' id='mov-" + x + "'></div>");
             var imgEl = $("<img class='mov-poster r' src='" + response.Poster + "'/>");
             var movHEl = $("<p class='mov-header r'>" + response.Title + "</p>");
-            var movDescEl = $("<p class='mov-desc r'>" + response.Plot + "</p>");
+            var movDescEl = $("<p class='mov-desc-t r'>" + response.Plot + "</p>");
 
 
             $(movieContent).append(colEl);
