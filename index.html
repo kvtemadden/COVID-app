@@ -31,6 +31,24 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+  <!-- Modal 1-->
+  <div id="modal-entercity" class="modal">
+    <div class="modal-content">
+      <h4>Please enter a valid city</h4>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat close-alert">Close</a>
+    </div>
+  </div>
+  <!-- Modal 2-->
+  <div id="modal-data" class="modal">
+    <div class="modal-content">
+      <h4>Data for this city is already showing</h4>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat close-alert">Close</a>
+    </div>
+  </div>
   <!-- MAIN HEADER AND CITY SEARCH BAR -->
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -44,20 +62,16 @@
               <div class="input-field">
                 <input placeholder="e.g Birmingham, London" id="enter-city" type="text" class="validate">
                 <label for="city">Enter city</label>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                <button id="search-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
           </form>
           <!-- USED LATER TO ADD PREVIOUSLY SEARCHED CITIES -->
           <form id="history"></form>
         </div>
         </div>
       </div>
-      <div class="container" id="results">
-        <div class="row">
-          <div class="col s3 cases green darken-1 white-text z-depth-2">cases</div>
-          <div class="col s3 deaths green darken-1 white-text offset-s1 z-depth-2">deaths</div>
-          <div class="col s3 hospital green darken-1 white-text offset-s1 z-depth-2">hospital</div>
-        </div>
-    </div>
+      <div class="container" id="results"></div>
+      <div class="container" id="results2"></div>
+      <div class="container" id="results3"></div>
   </div>
   <!-- CAROUSEL -->
   <!-- carousel is too big -->
@@ -87,6 +101,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="Develop/js/script.js"></script>
+  <script src="Develop/js/app.js"></script>
   </div>
 </body>
 
