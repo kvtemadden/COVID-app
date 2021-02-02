@@ -9,7 +9,7 @@ $(document).ready(function () {
         "Dramas": ["The Dig", "365 Days", "Rebecca", "The Green Mile", "Warrior", "Ava", "Bird Box", "Falling Down", "Twilight", "The Hunger Games"],
         "Horror": ["Sinister", "Annabelle", "Insideous", "The Exorcist", "The Ring", "The Grudge", "Thirteen", "The Babadook", "Eden Lake", "Final Destination"],
         "International": ["Parasite", "The Wailing", "Death Note", "Bleach", "Train to Busan", "Monsoon Wedding", "Woman at War", "The Salesman", "Ida", "Roma"],
-        "Musicals": ["Mamma Mia", "Les Miserablés", "Hairspray", "Hamilton", "Little Shop of Horrors", "The Sound of Music", "The Rocky Horror Picture Show", "Willy Wonka & the Chocolate Factor", "Cats", "Bohemian Rhapsody"],
+        "Musicals": ["Mamma Mia!", "Les Miserablés", "Hairspray", "Hamilton", "Little Shop of Horrors", "The Sound of Music", "The Rocky Horror Picture Show", "Willy Wonka & the Chocolate Factor", "Cats", "Bohemian Rhapsody"],
         "Romance": ["Blended", "Bridget Jones's Diary", "The Notebook", "Fifty Shades of Grey", "Five Feet Apart", "The Proposal", "Her", "Titanic", "Romeo and Juliet", "Crazy Rich Asians"]
     };
     var randomNum = Math.floor(Math.random() * 10);
