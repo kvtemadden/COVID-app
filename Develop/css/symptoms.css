@@ -64,3 +64,8 @@ background-repeat: repeat;
 .height {
   padding-bottom: 140px;
 }
+
+#logo {
+  height: 75p;
+  margin-top: 10px;
+}
