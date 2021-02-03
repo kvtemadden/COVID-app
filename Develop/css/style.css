@@ -5,41 +5,46 @@ body {
     min-height: 100vh;
     flex-direction: column;
   }
-  /* background image not working might just take it out looks fine without it */
 
-  /* main {
-    flex: 1 0 auto;
-  } */
+#main {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 50px;
+  border-radius: 20px;
+}
 
- #main{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 50px;
-    border-radius: 20px;
-  }
+label[for=city] {
+  color: black;
+}
 
-  label[for=city]{
-    color: black;
-  }
+::placeholder{
+  color: darkgrey;
+}
 
-  ::placeholder{
-    color: darkgrey;
-  }
+.box {
+  border-radius: 20px;
+  padding-top: 15px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  height: 100px;
+  max-width: 150px !important;
+  font-size: 22px;
+  text-align: center;
+  border: solid black 2px;
+}
 
-  .box {
-    border-radius: 20px;
-    padding-top: 15px;
-    margin-top: 15px;
-    margin-bottom: 50px;
-    align-self: center;
-    height: 100px;
-    max-width: 150px !important;
-    font-size: 22px;
-    text-align: center;
-    border: solid black 2px;
-  }
+.stats {
+  margin-left: 50px;
+}
 
-  .stats {
-    margin-left: 50px;
-  }
+.carousel .carousel-item>img {
+  height: auto;
+  width: auto;
+}
 
-
+.row .col.s3 {
+  margin-left: 6rem;
+  width: 40%;
+}
+.row .col {
+  box-sizing: content-box;
+}
