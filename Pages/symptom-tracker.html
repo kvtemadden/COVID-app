@@ -45,56 +45,44 @@
             <br><br>
             <h1 class="header center green-text">Check your symptoms</h1>
             <div class="row center">
-                <h5 class="header col s12 light">Use our Symptom Tracker and get guidance on the steps to take if you
+                <h5 class="header col s12 light mgn-b">Use our Symptom Tracker and get guidance on the steps to take if you
                     think you may have Covid</h5>
-                <div class="container">
-                <div class="row">
+                <div class="row cb-content">
                     <!-- SYMPTOMS -->
                     <p>
                         <label>
                             <input type="checkbox" class="filled-in" checked="checked" id="high-temp" />
-                            <span>A high temperature - this means you feel hot to touch on your chest or back </span>
+                            <span>A high temperature -</span>
                         </label>
+                        <a class="tooltipped" data-position="bottom" data-tooltip="A high temperature is anything over 38C, or you may have a high temperature if you feel hot to touch your chest or back.">More info</a>
                     </p>
                     <p>
                         <label>
                             <input type="checkbox" class="filled-in" checked="checked" id="cough" />
-                            <span>A new, continuous cough – this means coughing a lot for more than an hour, or 3 or
-                                more coughing episodes in 24 hours</span>
+                            <span>A new, continuous cough –</span>
                         </label>
+                        <a class="tooltipped" data-position="bottom" data-tooltip="Coughing repeatedly for more than an hour, or 3 or more coughing episodes in 24 hours">More info</a>
                     </p>
                     <p>
                         <label>
                             <input type="checkbox" class="filled-in" checked="checked" id="taste" />
-                            <span>A loss or change to your sense of smell or taste – this means you've noticed you
-                                cannot smell or taste anything, or things smell or taste different to normal</span>
+                            <span>A loss or change to your sense of smell or taste –</span>
                         </label>
+                        <a class="tooltipped" data-position="bottom" data-tooltip="If you've noticed you cannot smell or taste anything, or things smell or taste different to normal">More info</a>
                     </p>
                 </div>
 
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Get Advice</a>
+                    <a id="get-advice" class="waves-effect waves-light btn modal-trigger" href="#modal1">Get Advice</a>
 
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h4>What to do if you have symptoms</h4>
-                            <p>If you have any of the main symptoms of coronavirus:
-                                <br>
-                                <br>
-                                1. Get a test to check if you have coronavirus as soon as possible.
-                                <br>
-                                <br>
-                                2. You and anyone you live with should stay at home and not have visitors until you get
-                                your test result – only leave your home to have a test.
-                                <br>
-                                <br>
-                                Anyone in your support bubble should also stay at home if you have been in close contact
-                                with them since your symptoms started or during the 48 hours before they started.
+                            <h4 id="modal-header"></h4>
+                            <p id="modal-text-content">
                             </p>
-                            <br>
-                            Visit the <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/"> NHS website</a> to
-                            get the latest advice about COVID-19
+                            <p>Visit the <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/"> NHS website</a> to
+                            get the latest advice about COVID-19</p>
                         </div>
                         <div class="modal-footer">
                             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -103,7 +91,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -121,11 +108,7 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../Develop/js/script.js"></script>
-    <script text> $(document).ready(function () {
-            $('.modal').modal();
-        });
-    </script>
+    <script src="../Develop/js/symptom.js"></script>
 </body>
 
 </html>

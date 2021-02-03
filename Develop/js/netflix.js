@@ -8,12 +8,11 @@ $(document).ready(function () {
         "Comedies": ["Superbad", " Can't Hardly Wait", "Cloudy with a Chance of Meatballs", "50 First Dates", "Easy A", "Hail Caesar", "The Other Guys", "Scott Pilgrim vs. the World", "Wine Country", "Get Him to the Greek"],
         "Documentaries": ["Blue Planet", "The Last Dance", "My Octopus Teacher", "American Murder: The Family Next Door", "Tiger King", "Louis Theroux: Savile", "Unsolved Mysteries", "The Disappearance of Madeleine McCann", "The Confession Killer", "Jeffrey Epstein: Filthy Rich"],
         "Dramas": ["The Dig", "365 Days", "Rebecca", "The Green Mile", "Warrior", "Ava", "Bird Box", "Falling Down", "Twilight", "The Hunger Games"],
-        "Horror": ["Sinister", "Annabelle", "Insideous", "The Exorcist", "The Ring", "The Grudge", "Thirteen", "The Babadook", "Eden Lake", "Final Destination"],
+        "Horror": ["Sinister", "Annabelle", "Insidious", "The Exorcist", "The Ring", "The Grudge", "Thirteen", "The Babadook", "Eden Lake", "Final Destination"],
         "International": ["Parasite", "The Wailing", "Death Note", "Bleach", "Train to Busan", "Monsoon Wedding", "Woman at War", "The Salesman", "Ida", "Roma"],
         "Musicals": ["Mamma Mia!", "Les Miserablés", "Hairspray", "Hamilton", "Little Shop of Horrors", "The Sound of Music", "The Rocky Horror Picture Show", "Willy Wonka & the Chocolate Factor", "Cats", "Bohemian Rhapsody"],
         "Romance": ["Blended", "Bridget Jones's Diary", "The Notebook", "Fifty Shades of Grey", "Five Feet Apart", "The Proposal", "Her", "Titanic", "Romeo and Juliet", "Crazy Rich Asians"]
     };
-    var randomNum = Math.floor(Math.random() * 10);
     var movieContent = $("<div class='row center'></div>");
 
 
@@ -21,7 +20,7 @@ $(document).ready(function () {
 
     $("input[type=checkbox]").on("click", function () { //if checkbox is checked...
         preventFive();
-        var clickedGenre = $(this).attr("id");
+        var clickedGenre = $(this).attr("id"); // gets the selected genre
         var i = 0;
 
         if (jQuery.inArray(clickedGenre, userGenre) == -1) { // if value doesn't exist in array
@@ -47,7 +46,7 @@ $(document).ready(function () {
 
         var l = 0;
         var fillArray = 5 - userGenre.length;
-        if (userGenre.length < 5) {
+        if (userGenre.length < 5) { // if user selects less than 5 genres, fill array with their chosen genres
             while (l < fillArray) {
                 userGenre.push(userGenre[l]);
                 l++;
@@ -65,9 +64,11 @@ $(document).ready(function () {
             $("input[type=checkbox]").prop("checked", false);
             $("input:checkbox").prop("disabled", false);
             userGenre = [];
+            a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         }
 
         else {
+            r = [];
             $(this).addClass("return");
             $(this).text("Return to Search");
             $("#page-title").hide();
@@ -76,9 +77,12 @@ $(document).ready(function () {
             $("#content").append(movieContent);
 
             $("#search-desc").text("Here's our recommendations...");
+            // ranNum(); // generates non repeating random number
+
 
             for (j = 0; j < userGenre.length; j++) {
                 debugger;
+                ranNum(); // generates non repeating random number
                 // var currentFilm = userGenre[j];
                 // selectFilm = movies[currentFilm][randomNum];
                 genMovie(j);
@@ -96,7 +100,7 @@ $(document).ready(function () {
                     saveMovInfo(response);
                 });
             };
-            
+
             x = 0;
         }
     });
@@ -107,37 +111,53 @@ $(document).ready(function () {
 
     function genMovie() {
         currentFilm = userGenre[j];
-        selectFilm = movies[currentFilm][Math.floor(Math.random() * 10)];
+        // selectFilm = movies[currentFilm][Math.floor(Math.random() * 10)];
+        selectFilm = movies[currentFilm][r[j]]; // generates film
+        movieCollections.push(selectFilm); // pushes to film selection
+    }
+
+    var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var r = [];
+
+    function ranNum() {
+        var i = Math.floor(Math.random() * 10); // generate random number up to 10
+        for (var z = 0; z < r.length; z++) { // loop through r array...
+            if (a[i] == r[z]) { // if integer exist, generate new number
+                i = Math.floor(Math.random() * 10)
+            }
+        }
+        r.push(a[i]); // push new random number to array for later comparison
     }
 
     function saveMovInfo(response) {
         if (userGenre.length == 5) {
-            if (x <= 2) {
-            var colEl = $("<div class='col s12 m4 r' id='mov-" + x + "'></div>");
-            var imgEl = $("<img class='mov-poster r' src='" + response.Poster + "'/>");
-            var movHEl = $("<p class='mov-header r'>" + response.Title + "</p>");
-            var movDescEl = $("<p class='mov-desc-t r'>" + response.Plot + "</p>");
-
-
-            $(movieContent).append(colEl);
-            $(colEl).append(imgEl);
-            $(colEl).append(movHEl);
-            $(colEl).append(movDescEl);
-            }
-            else if (x > 2) {
-                var colEl = $("<div class='col s12 m6 r' id='mov-" + x + "'></div>");
+            if (x <= 2) { // for the first three movies...
+                // build out movie header, description and images
+                var colEl = $("<div class='col s12 m4 r' id='mov-" + x + "'></div>");
                 var imgEl = $("<img class='mov-poster r' src='" + response.Poster + "'/>");
                 var movHEl = $("<p class='mov-header r'>" + response.Title + "</p>");
-                var movDescEl = $("<p class='mov-desc r'>" + response.Plot + "</p>");
-    
+                var movDescEl = $("<p class='mov-desc-t r'>" + response.Plot + "</p>");
+
+                // push to html
                 $(movieContent).append(colEl);
                 $(colEl).append(imgEl);
                 $(colEl).append(movHEl);
                 $(colEl).append(movDescEl);
-                }
+            }
+            else if (x > 2) { // for the last two...
+                var colEl = $("<div class='col s12 m6 r' id='mov-" + x + "'></div>");
+                var imgEl = $("<img class='mov-poster r' src='" + response.Poster + "'/>");
+                var movHEl = $("<p class='mov-header r'>" + response.Title + "</p>");
+                var movDescEl = $("<p class='mov-desc r'>" + response.Plot + "</p>");
+
+                $(movieContent).append(colEl);
+                $(colEl).append(imgEl);
+                $(colEl).append(movHEl);
+                $(colEl).append(movDescEl);
+            }
             x++;
         }
-        }
+    }
 
 
 

@@ -8,3 +8,26 @@ input [type="checkbox"]
 {
     align-self: middle;
 }
+
+.mgn-b {
+  margin-bottom: 3rem;
+}
+
+.cb-content {
+  text-align: left;
+  max-width: 900px;
+}
+
+a {
+  cursor: pointer;
+}
+
+#modal1 {
+  overflow: inherit;
+}
+
+.modal-content {
+  text-align: left;
+  padding: 2rem 3rem!important;
+  line-height: 1.8;
+}
