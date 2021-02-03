@@ -69,3 +69,7 @@ background-repeat: repeat;
   height: 55px;
   margin-top: 10px;
 }
+
+#active-page {
+  border-bottom: solid 2px white;
+}
