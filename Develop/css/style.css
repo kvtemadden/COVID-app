@@ -25,17 +25,21 @@ body {
     color: darkgrey;
   }
 
-  #cases{
+  .box {
     border-radius: 20px;
-    padding: 20px;
+    padding-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    align-self: center;
+    height: 100px;
+    max-width: 150px !important;
+    font-size: 22px;
+    text-align: center;
+    border: solid black 2px;
   }
 
-  #deaths{  
-    border-radius: 20px;
-    padding: 20px;
+  .stats {
+    margin-left: 50px;
   }
 
-  #hospital{
-    border-radius: 20px;
-    padding: 20px;
-  }
+
