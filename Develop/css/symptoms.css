@@ -11,6 +11,7 @@ input [type="checkbox"]
 
 .mgn-b {
   margin-bottom: 3rem;
+  line-height: 1.5;
 }
 
 .cb-content {
@@ -30,4 +31,36 @@ a {
   text-align: left;
   padding: 2rem 3rem!important;
   line-height: 1.8;
+}
+
+div.cb-content p {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+[type="checkbox"]+span:not(.lever) {
+  display: inherit;
+}
+
+footer {
+  height: 110px; 
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+html, body {
+height: 100%;
+background-image: url('https://drive.google.com/thumbnail?id=19eHSR9C-SloyfPSzYDVe-po3j-iwJtBw');
+background-repeat: repeat;
+}
+
+#holder {
+  min-height: 100%;
+  position:relative;
+}
+
+.height {
+  padding-bottom: 140px;
 }
