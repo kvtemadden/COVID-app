@@ -4,30 +4,25 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Symptom Tracker</title>
+    <title>Covidwise - Symptom Tracker</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="../Develop/css/symptoms.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel='icon' href='../Assets/Images/favicon_io/favicon.ico' type='image/x-icon'/>
+
 </head>
 
 <body>
 
-<!-- <style>
-    #main{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 50px;
-    border-radius: 20px;
-  }
-</style> -->
-
     <!-- NAV BAR -->
+    <div id="holder">
     <nav class="green lighten-3" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Covid site</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo"><img id="logo" src="../Assets/Images/logo.png" alt="Covidwise logo"/></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="symptom-tracker.html">Symptom Tracker</a></li>
+                <li><a href="symptom-tracker.html" id="active-page">Symptom Tracker</a></li>
                 <li><a href="bored.html">Bored during lockdown?</a></li>
             </ul>
             <!-- MOBILE NAV -->
@@ -40,6 +35,7 @@
         </div>
     </nav>
     <!-- MAIN HEADER -->
+    <article class="height">
     <div class="section no-pad-bot" id="index-banner">
         <div class="container green lighten-5" id="main">
             <br><br>
@@ -91,7 +87,7 @@
                 </div>
             </div>
         </div>
-
+    </article>
 
 
 
@@ -103,6 +99,7 @@
                     <h5 class="white-text">Group 5</h5>
                     <p class="grey-text text-lighten-4">Group 5 project 1</p>
     </footer>
+</div>
 
 
     <!--  Scripts-->
