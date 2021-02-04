@@ -40,12 +40,13 @@
       <br><br>
       <h1 class="header center green-text">Get COVID information for your area</h1>
       <div class="row center">
-        <h5 class="header col s12 light">Enter your city below to get up to date statistics</h5>
+        <h5 class="header col s12 light">Enter your area below to get up-to-date statistics</h5>
         <div class="row">
           <form class="col s12">
             <div class="row">
               <div class="input-field">
                 <input placeholder="e.g Birmingham" id="enter-city" type="text" class="validate">
+                <label for="city">Enter your local authority</label>
                 <label for="city">Enter city</label>
                 </div>
                 <!-- <p class="hide" id="error">Please enter a city</p> -->
@@ -66,7 +67,9 @@
   <!-- ALERT MODALS -->
   <div id="modal-entercity" class="modal">
     <div class="modal-content">
-      <h4>Please enter a valid city</h4>
+      <h4 class="modal-font">Please enter a valid local authority.<bR> If you are unsure what your local authority
+        is, please click <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/80232/Table-of-English-Upper-Tier-Local-Authorities-and-NCS-Providers.pdf" target="_blank">here</a>
+      </h4>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -75,7 +78,18 @@
 
   <div id="modal-data" class="modal">
     <div class="modal-content">
-      <h4>Data for this city is already populated</h4>
+      <h4 class="modal-font">Data for this area is already populated</h4>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+  <div id="modal-nodata" class="modal">
+    <div class="modal-content">
+      <h4 class="modal-font">Data for this area is unavailable, please enter another local authority.<br>
+        For more information on local authorites please click <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/80232/Table-of-English-Upper-Tier-Local-Authorities-and-NCS-Providers.pdf" target="_blank">here</a>
+      </h4>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>

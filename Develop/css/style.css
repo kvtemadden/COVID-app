@@ -22,18 +22,34 @@ label[for=city] {
 
 .box {
   border-radius: 20px;
-  padding-top: 15px;
+  padding-top: 10px;
   margin-top: 15px;
   margin-bottom: 30px;
-  height: 100px;
-  max-width: 150px !important;
+  height: 120px;
+  max-width: 150px;
   font-size: 22px;
   text-align: center;
   border: solid black 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-content: center;
+  display: inline-block;
 }
 
-.stats {
-  margin-left: 50px;
+.box-alt {
+  border-radius: 20px;
+  padding-top: 27px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  height: 120px;
+  max-width: 150px;
+  font-size: 22px;
+  text-align: center;
+  border: solid black 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-content: center;
+  display: inline-block;
 }
 
 .carousel .carousel-item>img {
@@ -41,10 +57,27 @@ label[for=city] {
   width: auto;
 }
 
-.row .col.s3 {
-  margin-left: 6rem;
-  width: 40%;
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width:60%;
+  height:20%;
+  z-index: 1000;
 }
+
+.modal-font {
+  font-size: 25px;
+  text-align: center;
+}
+
+.stats {
+  margin-bottom: 20px;
+  border: solid 3px black;
+  border-radius: 20px;
+
+}
+
 .row .col {
   box-sizing: content-box;
 }
