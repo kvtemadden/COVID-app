@@ -10,15 +10,17 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="Develop/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel='icon' href='Assets/Images/favicon_io/favicon.ico' type='image/x-icon'/>
 </head>
 
 
 <body>
   <!-- NAV BAR -->
+  <div id="holder">
   <nav class="green lighten-3">
-    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Covidwise</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo"><img id="logo" src="Assets/Images/logo.png" alt="Covidwise logo"/></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" id="active-page">Home</a></li>
         <li><a href="Pages/symptom-tracker.html">Symptom Tracker</a></li>
         <li><a href="Pages/bored.html">Bored during lockdown?</a></li>
       </ul>
@@ -32,7 +34,8 @@
     </div>
   </nav>
   <!-- MAIN HEADER AND CITY SEARCH BAR -->
-  <div class="section no-pad-bot" id="index-banner">
+  <article class="height">
+   <div class="section no-pad-bot" id="index-banner">
     <div class="container green lighten-5" id="main">
       <br><br>
       <h1 class="header center green-text">Get COVID information for your area</h1>
@@ -44,20 +47,22 @@
               <div class="input-field">
                 <input placeholder="e.g Birmingham" id="enter-city" type="text" class="validate">
                 <label for="city">Enter your local authority</label>
+                <label for="city">Enter city</label>
+                </div>
                 <!-- <p class="hide" id="error">Please enter a city</p> -->
                 <button id="search-btn" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
                 <button id="clear-btn" class="btn waves-effect waves-light" type="submit" name="action">Clear Results</button>
+            </div>
           </form>
           <!-- USED LATER TO ADD PREVIOUSLY SEARCHED CITIES -->
           <form id="history"></form>
         </div>
       </div>
-    </div>
     <!-- DISPLAYS SEARCH RESULTS -->
     <div class="container" id="results"></div>
     <div class="container" id="results2"></div>
     <div class="container" id="results3"></div>
-  </div>
+ 
 
   <!-- ALERT MODALS -->
   <div id="modal-entercity" class="modal">
@@ -102,17 +107,19 @@
     <div class="carousel-item"><img class="responsive-img nhs" alt="nhs" src="Assets/Images/row-1-col-3.jpg">
     </div>
   </div>
-  </div>
+</div>
+</div>
+  </article>
 
   <!-- FOOTER -->
   <footer class="page-footer green lighten-3">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Group 5</h5>
-          <p class="grey-text text-lighten-4">Group 5 project 1</p>
-  </footer>
-
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Group 5</h5>
+                <p class="grey-text text-lighten-4">Group 5 project 1</p>
+</footer>
+</div>
 
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

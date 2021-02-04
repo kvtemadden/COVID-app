@@ -77,3 +77,39 @@ label[for=city] {
   border-radius: 20px;
 
 }
+
+.row .col {
+  box-sizing: content-box;
+}
+
+#logo {
+  height: 55px;
+  margin-top: 10px;
+}
+
+#active-page {
+  border-bottom: solid 2px white;
+}
+
+footer {
+  height: 110px; 
+  width:100%;
+  position: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+html, body {
+height: 100%;
+background-image: url('https://drive.google.com/thumbnail?id=19eHSR9C-SloyfPSzYDVe-po3j-iwJtBw');
+background-repeat: repeat;
+}
+
+#holder {
+  min-height: 100%;
+  position:relative;
+}
+
+.height {
+  padding-bottom: 140px;
+}

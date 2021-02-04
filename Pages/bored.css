@@ -88,3 +88,16 @@ body{
 .row .col.s4 {
     width: 27.333333%;
 }
+
+.no-mb {
+    margin-bottom: 0;
+}
+
+#logo {
+    height: 55px;
+    margin-top: 10px;
+  }
+  
+  #active-page {
+    border-bottom: solid 2px white;
+  }
