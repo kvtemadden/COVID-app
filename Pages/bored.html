@@ -10,16 +10,18 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="bored.css" type="text/css" rel="stylesheet" />
+  <link rel='icon' href='Assets/Images/favicon_io/favicon.ico' type='image/x-icon'/>
 </head>
 
 <body>
   <!-- NAV BAR -->
+  <div id="holder">
   <nav class="green lighten-3">
-    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Covid site</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo"><img id="logo" src="../Assets/Images/logo.png" alt="Covidwise logo"/></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="../index.html">Home</a></li>
         <li><a href="symptom-tracker.html">Symptom Tracker</a></li>
-        <li><a href="bored.html">Bored during lockdown?</a></li>
+        <li><a href="bored.html" id="active-page">Bored during lockdown?</a></li>
       </ul>
       <!-- MOBILE NAV -->
       <ul id="nav-mobile" class="sidenav">
@@ -32,6 +34,7 @@
   </nav>
 
   <!-- MAIN HEADER  -->
+  <article class="height">
   <div class="container green lighten-5" id="main">
     <div class="section no-pad-bot" id="index-banner">
       <div class="row center">
@@ -123,6 +126,7 @@
       </div>
     </div>
   </div>
+</article>
 
 
 
@@ -131,14 +135,12 @@
   <!-- FOOTER -->
   <footer class="page-footer green lighten-3">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Group 5</h5>
-          <p class="grey-text text-lighten-4">Group 5 project 1</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+        <div class="row no-mb">
+            <div class="col l6 s12">
+                <h5 class="white-text">Group 5</h5>
+                <p class="grey-text text-lighten-4">Group 5 project 1</p>
+</footer>
+</div>
 
 
   <!--  Scripts-->
