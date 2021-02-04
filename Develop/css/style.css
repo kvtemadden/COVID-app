@@ -60,9 +60,9 @@ label[for=city] {
 .modal {
   position: fixed;
   left: 0;
-  top: 0;
-  width:60%;
-  height:20%;
+  top: 15%;
+  width: 60%;
+  height: fit-content;
   z-index: 1000;
 }
 
