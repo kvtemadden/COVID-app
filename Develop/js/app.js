@@ -133,7 +133,6 @@ $(document).ready(function () {
   // searches on clicked search history
   $(document).on("click", ".hl", function(e) {
     cityClicked = $(this).text();
-    debugger;
     $("input").val(cityClicked);
     let searchItem = userHistorySearch();
       localStorage.setItem("city", searchItem);
