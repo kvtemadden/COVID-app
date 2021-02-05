@@ -11,9 +11,9 @@ Section | Description
 [Licence](#licence) | Licence for the source code
 
 ## Screenshot
-![Screenshot of working homepage](Assets/Images/covidwise-homepage)
-![Screenshot of working symptom tracker](Assets/Images/covidwise-symptom-tracker)
-![Screenshot of working movie page](Assets/Images/covidwise-movies)
+![Screenshot of working homepage](/Assets/Images/covidwise-homepage.png)
+![Screenshot of working symptom tracker](/Assets/Images/covidwise-symptom-tracker.png)
+![Screenshot of working movie page](/Assets/Images/covidwise-movies.png)
 
 You can access the site via [this link](https://kvtemadden.github.io/covidwise/)
 
