@@ -7,9 +7,19 @@ $(document).ready(function () {
     prevSession();
   })
 
-  // Grab search item and store it in a variable
+  // Capitalise the first letter of each city
+  function toCapitals(string) {
+    string = string.split(" ");
+      for (var i = 0; i < string.length; i++) {
+        string[i] = string[i][0].toUpperCase() + string[i].substr(1);
+      }
+    return string.join(" ");
+  }
+
+  // Retrieve search item and store it in a variable
   function userSearch() {
-    let search = $("#enter-city").val().trim();
+    let city = $("#enter-city").val().trim();
+    let search = toCapitals(city);
     if (utla.includes(search)) {
       return search;
     }
@@ -69,9 +79,9 @@ $(document).ready(function () {
 
   //sets search history list
   function setSearchHistory() {
-    var searchedCity = $("input").val(); //gets user input
-
-    for (var j = 0; j < saveSearchHistory.length; j++) {
+    let city = $("input").val(); //gets user input
+    let searchedCity = toCapitals(city);
+    for (let j = 0; j < saveSearchHistory.length; j++) {
       if (searchedCity == saveSearchHistory[j]) {
         saveSearchHistory.splice(j, 1);
       }
@@ -143,6 +153,7 @@ $(document).ready(function () {
       searchHistory.unshift(searchItem);
       covidLocal();
       setSearchHistory();
+      $("#enter-city").val("");
   });
 
   // loads previous session search history
@@ -165,10 +176,10 @@ $(document).ready(function () {
     $("#results").html("").removeClass();
     $("#results2").html("").removeClass();
     $("#results3").html("").removeClass();
-    localStorage.clear();
     $("input").val("");
-    $("#recents").empty();
-    $("#history").empty();
+    $("#recents").empty().text("");
+    $("#history").empty().text("");
+    localStorage.clear();
   })
 
   // Arrays to store searches
@@ -282,22 +293,22 @@ $(document).ready(function () {
 
 var cityClicked = "";
 var utla = [
-  "Barking and Dagenham",
+  "Barking And Dagenham",
   "Barnet",
   "Barnsley",
-  "Bath and North East Somerset",
+  "Bath And North East Somerset",
   "Bedford",
   "Bexley",
   "Birmingham",
-  "Blackburn with Darwen",
+  "Blackburn With Darwen",
   "Blackpool",
   "Bolton",
-  "Bournemouth, Christchurch and Poole",
+  "Bournemouth, Christchurch And Poole",
   "Bracknell Forest",
   "Bradford",
   "Brent",
-  "Brighton and Hove",
-  "Bristol, City of",
+  "Brighton And Hove",
+  "Bristol, City Of",
   "Bromley",
   "Buckinghamshire",
   "Bury",
@@ -306,8 +317,8 @@ var utla = [
   "Camden",
   "Central Bedfordshire",
   "Cheshire East",
-  "Cheshire West and Chester",
-  "Cornwall and Isles of Scilly",
+  "Cheshire West And Chester",
+  "Cornwall And Isles Of Scilly",
   "County Durham",
   "Coventry",
   "Croydon",
@@ -320,31 +331,31 @@ var utla = [
   "Dorset",
   "Dudley",
   "Ealing",
-  "East Riding of Yorkshire",
+  "East Riding Of Yorkshire",
   "East Sussex",
   "Enfield",
   "Essex",
   "Gateshead",
   "Gloucestershire",
   "Greenwich",
-  "Hackney and City of London",
+  "Hackney And City Of London",
   "Halton",
-  "Hammersmith and Fulham",
+  "Hammersmith And Fulham",
   "Hampshire",
   "Haringey",
   "Harrow",
   "Hartlepool",
   "Havering",
-  "Herefordshire, County of",
+  "Herefordshire, County Of",
   "Hertfordshire",
   "Hillingdon",
   "Hounslow",
-  "Isle of Wight",
+  "Isle Of Wight",
   "Islington",
-  "Kensington and Chelsea",
+  "Kensington And Chelsea",
   "Kent",
-  "Kingston upon Hull, City of",
-  "Kingston upon Thames",
+  "Kingston Upon Hull, City Of",
+  "Kingston Upon Thames",
   "Kirklees",
   "Knowsley",
   "Lambeth",
@@ -361,7 +372,7 @@ var utla = [
   "Merton",
   "Middlesbrough",
   "Milton Keynes",
-  "Newcastle upon Tyne",
+  "Newcastle Upon Tyne",
   "Newham",
   "Norfolk",
   "North East Lincolnshire",
@@ -380,8 +391,8 @@ var utla = [
   "Portsmouth",
   "Reading",
   "Redbridge",
-  "Redcar and Cleveland",
-  "Richmond upon Thames",
+  "Redcar And Cleveland",
+  "Richmond Upon Thames",
   "Rochdale",
   "Rotherham",
   "Rutland",
@@ -396,13 +407,13 @@ var utla = [
   "South Gloucestershire",
   "South Tyneside",
   "Southampton",
-  "Southend-on-Sea",
+  "Southend-On-Sea",
   "Southwark",
   "St. Helens",
   "Staffordshire",
   "Stockport",
-  "Stockton-on-Tees",
-  "Stoke-on-Trent",
+  "Stockton-On-Tees",
+  "Stoke-On-Trent",
   "Suffolk",
   "Sunderland",
   "Surrey",
@@ -425,7 +436,7 @@ var utla = [
   "Westminster",
   "Wigan",
   "Wiltshire",
-  "Windsor and Maidenhead",
+  "Windsor And Maidenhead",
   "Wirral",
   "Wokingham",
   "Wolverhampton",
