@@ -7,7 +7,7 @@ As well as the data, the site has a symptom checker and an area that gives movie
 Section | Description
 ------------ | -------------
 [Screenshot](#screenshot) | Screenshots of the covidwise site and links to the working site & repo.
-[Functionality](#functionality) | Information on the functionality of the weather app.
+[Functionality](#functionality) | Information on the functionality of the covidwise site.
 [Licence](#licence) | Licence for the source code
 
 ## Screenshot
@@ -15,7 +15,7 @@ Section | Description
 ![Screenshot of working symptom tracker](/Assets/Images/covidwise-symptom-tracker.PNG)
 ![Screenshot of working movie page](/Assets/Images/covidwise-movies.PNG)
 
-You can access the site via [this link](https://kvtemadden.github.io/covidwise/)
+You can access the site via [this link](https://kvtemadden.github.io/Covidwise/)
 
 And you can access the GitHub Repo via [this link](https://github.com/kvtemadden/covidwise/)
 
