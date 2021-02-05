@@ -15,7 +15,7 @@ Section | Description
 ![Screenshot of working symptom tracker](/Assets/Images/covidwise-symptom-tracker.PNG)
 ![Screenshot of working movie page](/Assets/Images/covidwise-movies.PNG)
 
-You can access the site via [this link](https://kvtemadden.github.io/covidwise/)
+You can access the site via [this link](https://kvtemadden.github.io/Covidwise/)
 
 And you can access the GitHub Repo via [this link](https://github.com/kvtemadden/covidwise/)
 
