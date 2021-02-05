@@ -101,3 +101,11 @@ body{
   #active-page {
     border-bottom: solid 2px white;
   }
+
+ /* Fixed issue for the iPhone X display */
+
+  @media (max-width: 430px){
+  [type="checkbox"]+span:not(.lever) {
+    font-size: 12px;
+  }
+}
