@@ -7,7 +7,7 @@ As well as the data, the site has a symptom checker and an area that gives movie
 Section | Description
 ------------ | -------------
 [Screenshot](#screenshot) | Screenshots of the covidwise site and links to the working site & repo.
-[Functionality](#functionality) | Information on the functionality of the weather app.
+[Functionality](#functionality) | Information on the functionality of the covidwise site.
 [Licence](#licence) | Licence for the source code
 
 ## Screenshot
