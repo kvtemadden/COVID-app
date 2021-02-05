@@ -43,7 +43,7 @@ $(document).ready(function () {
         }
         else if (numCheckedBoxes > 0) {
             modalHeader.text("What to do next");
-            modalContent.html("<p>You've told us you have " + userSymptoms + ".</p><p>Based on this information, we suggest that you book yourself in for a Coronavirus test using the NHS service. You can <a href='https://www.gov.uk/get-coronavirus-test'>book yourself a test on this page</a>.</p><p>In the meantime, you should self-isolate until you receive the results of your test.</p>");
+            modalContent.html("<p>You've told us you have " + userSymptoms + ".</p><p>Based on this information, we suggest that you book yourself in for a Coronavirus test using the NHS service. You can <a target='_blank' href='https://www.gov.uk/get-coronavirus-test'>book yourself a test on this page</a>.</p><p>In the meantime, you should self-isolate until you receive the results of your test.</p>");
         }
 
     });
