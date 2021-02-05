@@ -113,3 +113,27 @@ background-repeat: repeat;
 .height {
   padding-bottom: 140px;
 }
+
+.hl {
+  color: #26a69a;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#history>li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.hl:hover {
+  border-bottom: 2px solid #26a69a;
+}
+
+#history {
+  float: left;
+  margin-left: 5px;
+}
+
+#recents {
+  float: left;
+}
