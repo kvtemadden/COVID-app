@@ -14,6 +14,7 @@ Section | Description
 ![Screenshot of working homepage](/Assets/Images/covidwise-home.PNG)
 ![Screenshot of working symptom tracker](/Assets/Images/covidwise-symptom-tracker.PNG)
 ![Screenshot of working movie page](/Assets/Images/covidwise-movies.PNG)
+![Screenshot of trello board](/Assets/Images/trello-board.PNG)
 
 You can access the site via [this link](https://kvtemadden.github.io/Covidwise/)
 
