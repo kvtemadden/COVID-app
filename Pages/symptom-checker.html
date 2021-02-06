@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Covidwise - Symptom Checker</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="../Develop/css/symptoms.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel='icon' href='../Assets/Images/favicon_io/favicon.ico' type='image/x-icon'/>
+
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <div id="holder">
+    <nav class="green lighten-3" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="../index.html" class="brand-logo"><img id="logo" src="../Assets/Images/logo.png" alt="Covidwise logo"/></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="symptom-checker.html" id="active-page">Symptom Checker</a></li>
+                <li><a href="bored.html">Bored during lockdown?</a></li>
+            </ul>
+            <!-- MOBILE NAV -->
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="symptom-checker.html">Symptom Checker</a></li>
+                <li><a href="bored.html">Bored during lockdown?</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <!-- MAIN HEADER -->
+    <article class="height">
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container green lighten-5" id="main">
+            <br><br>
+            <h1 class="header center green-text">Check your symptoms</h1>
+            <div class="row center">
+                <h5 class="header col s12 light mgn-b">Use our Symptom Checker and get guidance on the steps to take if you
+                    think you may have Covid</h5>
+                <div class="row cb-content">
+                    <!-- SYMPTOMS -->
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" id="high-temp" />
+                            <span>A high temperature -</span>
+                        </label>
+                        <a class="tooltipped" data-position="bottom" data-tooltip="A high temperature is anything over 38C, or you may have a high temperature if you feel hot to touch your chest or back.">More info</a>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" id="cough" />
+                            <span>A new, continuous cough –</span>
+                        </label>
+                        <a class="tooltipped" data-position="bottom" data-tooltip="Coughing repeatedly for more than an hour, or 3 or more coughing episodes in 24 hours">More info</a>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" checked="checked" id="taste" />
+                            <span>A loss or change to your sense of smell or taste –</span>
+                        </label>
+                        <a class="tooltipped" data-position="bottom" data-tooltip="If you've noticed you cannot smell or taste anything, or things smell or taste different to normal">More info</a>
+                    </p>
+                </div>
+
+                    <!-- Modal Trigger -->
+                    <a id="get-advice" class="waves-effect waves-light btn modal-trigger" href="#modal1">Get Advice</a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4 id="modal-header"></h4>
+                            <p id="modal-text-content">
+                            </p>
+                            <p>Visit the <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/"> NHS website</a> to
+                            get the latest advice about COVID-19</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+
+    <!-- FOOTER -->
+    <footer class="page-footer green lighten-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Group 5</h5>
+                    <p class="grey-text text-lighten-4">Group 5 project 1</p>
+    </footer>
+</div>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../Develop/js/symptom.js"></script>
+</body>
+
+</html>
