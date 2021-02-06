@@ -81,7 +81,6 @@ $(document).ready(function () {
 
 
             for (j = 0; j < userGenre.length; j++) {
-                debugger;
                 ranNum(); // generates non repeating random number
                 // var currentFilm = userGenre[j];
                 // selectFilm = movies[currentFilm][randomNum];
