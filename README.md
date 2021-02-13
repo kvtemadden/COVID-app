@@ -20,6 +20,8 @@ You can access the site via [this link](https://kvtemadden.github.io/Covidwise/)
 
 And you can access the GitHub Repo via [this link](https://github.com/kvtemadden/covidwise/)
 
+Languages: jQuery, CSS, Materialize Framework, HTML.
+
 ## Functionality
 On first visit, the user lands on the page and is presented with the ability to search for their local authority in order to receive information on COVID-19 cases in their area.
 
@@ -36,6 +38,12 @@ Otherwise, if a user clicks search and hasn't got any symptoms then the pop up m
 Finally, on the movies page, users are presented with 9 genres they can choose from to generate suggestions as to what they could watch.
 
 Users are restricted to selecting up to 5 of the 9 genres at any one time, and can reset their search in order to pick other genres if they'd prefer to.
+
+## Collaborators
+kvtemadden
+MJ-0001
+zs274
+Tataru-94
 
 ## Licence
 > This site was created under the standard MIT licence.
